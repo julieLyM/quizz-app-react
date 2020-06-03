@@ -44,16 +44,16 @@ function App() {
 
   const question = questions[currentQuestion];
 
-  const handleClick = (e) => {
+  constreturn  handleClick = (e) => {
     setCurrentAnswer(e.target.value);
     setError('');
   };
 
   const renderResultsMark = (question, answer) => {
-    if (question.correct_answer === answer.answer) {
-      return <span style={{ color: 'green' }}>correct</span>;
-    }
-    return <span style={{ color: 'red' }}>fail</span>;
+if(question.correct_answer === answer.answer) {
+
+}
+
   };
 
   const renderResults = () => {
@@ -61,11 +61,7 @@ function App() {
       const question = questions.find(
         (question) => question.id === answer.questionId
       );
-      return (
-        <div keu={question.id}>
-          {question.question} - {renderResultsMark(question, answer)}
-        </div>
-      );
+      return <div keu={question.id}>{question.question}</div>;
     });
   };
 

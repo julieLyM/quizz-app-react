@@ -51,9 +51,9 @@ function App() {
 
   const renderResultsMark = (question, answer) => {
     if (question.correct_answer === answer.answer) {
-      return <span style={{ color: 'green' }}>correct</span>;
+      return <span>correct</span>;
     }
-    return <span style={{ color: 'red' }}>fail</span>;
+    return <span>fail</span>;
   };
 
   const renderResults = () => {
@@ -61,11 +61,7 @@ function App() {
       const question = questions.find(
         (question) => question.id === answer.questionId
       );
-      return (
-        <div keu={question.id}>
-          {question.question} - {renderResultsMark(question, answer)}
-        </div>
-      );
+      return <div keu={question.id}>{question.question} </div>;
     });
   };
 

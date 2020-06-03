@@ -49,33 +49,6 @@ function App() {
     setError('');
   };
 
-  const renderResultsMark = (question, answer) => {
-    if (question.correct_answer === answer.answer) {
-      return <span style={{ color: 'green' }}>correct</span>;
-    }
-    return <span style={{ color: 'red' }}>fail</span>;
-  };
-
-  const renderResults = () => {
-    return answers.map((answer) => {
-      const question = questions.find(
-        (question) => question.id === answer.questionId
-      );
-      return (
-        <div keu={question.id}>
-          {question.question} - {renderResultsMark(question, answer)}
-        </div>
-      );
-    });
-  };
-
-  const restart = () => {
-    setAnswers([]);
-    setCurrentAnswer('');
-    setCurrentQuestion(0);
-    setShowResult(false);
-  };
-
   const next = () => {
     const answer = { questionId: question.id, answer: currentAnswer };
     if (!currentAnswer) {
@@ -101,10 +74,9 @@ function App() {
 
   if (showResult) {
     return (
-      <div className="container results">
+      <div>
         <h2>Results</h2>
-        {renderResults()}
-        <button className="btn btn-primary" onClick={restart}>
+        <button className="btn btn-primary" onClick={next}>
           restart quizz
         </button>
       </div>

@@ -49,26 +49,9 @@ function App() {
     setError('');
   };
 
-  const renderResultsMark = (question, answer) => {
-    if (question.correct_answer === answer.answer) {
-      return <span style={{ color: 'green' }}>correct</span>;
-    }
-    return <span style={{ color: 'red' }}>fail</span>;
-  };
-
   const renderResults = () => {
-    return answers.map((answer) => {
-      const question = questions.find(
-        (question) => question.id === answer.questionId
-      );
-      return (
-        <div keu={question.id}>
-          {question.question} - {renderResultsMark(question, answer)}
-        </div>
-      );
-    });
+return answers.map(answer => )
   };
-
   const restart = () => {
     setAnswers([]);
     setCurrentAnswer('');
@@ -103,7 +86,6 @@ function App() {
     return (
       <div className="container results">
         <h2>Results</h2>
-        {renderResults()}
         <button className="btn btn-primary" onClick={restart}>
           restart quizz
         </button>

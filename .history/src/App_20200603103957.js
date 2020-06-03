@@ -51,9 +51,9 @@ function App() {
 
   const renderResultsMark = (question, answer) => {
     if (question.correct_answer === answer.answer) {
-      return <span style={{ color: 'green' }}>correct</span>;
+      return <span>correct</span>;
     }
-    return <span style={{ color: 'red' }}>fail</span>;
+    return <span>fail</span>;
   };
 
   const renderResults = () => {
